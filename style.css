@@ -1,0 +1,47 @@
+/*--------------------- 
+Author: "Ademola Onasoga",
+website: "invoice" 
+---------------------*/
+
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eeeeee;
+    font-family: 'montserrat', sans-serif;
+}
+
+.grey-bg{
+    padding: 0 1em;
+    background: #eeeeee;
+    border-top-right-radius: 1em;
+}
+
+.form {
+    background: #ffffff;
+    padding: 2em;
+    margin: 2em;
+}
+
+.form-control {
+    resize: none;
+}
+
+h1, h2, h3,h4,h5,h6{
+    font-family: 'comfortaa', sans-serif;
+}
+
+.table thead{
+    color: yellow;
+    font-size: 700;
+    letter-spacing: 2px;
+}
+
+.table td {
+    padding: 0.2em;
+    vertical-align: top;
+    border-top: none !important;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invoice</title>
+    <!-- css  -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+        <div class="container" v-bind:id="app">
+            <form action="/" method="post" class="form">
+                <div id="">
+                <div class="row" id="">
+                    <div class="col-md-6 col-sm-12">
+                        <h2 class="">Invoice</h2>
+                        <div class="input-group d-flex">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">#</span>
+                                <input type="text" name="" id="" placeholder="Invoice Number" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Date</span>
+                                <input type="date" name="" id="" class="form-control">
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text">Terms</span>
+                                <input type="text" name="" id="" class="form-control" placeholder="Payment terms">
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text">Due Date</span>
+                                <input type="Due Date" name="" id="" class="form-control" placeholder="Payment terms">
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="grey-bg app" >
+                            <p>Balance: {{balance}}</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <div class="logo noselect">
+                            <div class="placeholder" ng-hide="invoice.logo">
+                                <div class="main"><span class="ion-plus-round"></span> Add Your Logo</div>
+
+                            </div>
+                            <!-- <img ng-show="invoice.logo" ng-src="" alt="Invoice Logo" class="ng-hide"> -->
+                            <input type="file" class="form-control">
+
+                        </div> <br>
+
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="2"
+                                placeholder="Who is this invoice from? (Required)" required
+                                class="form-control"></textarea>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="">Bill to</label><br>
+                            <textarea class="form-control" name="" id="" cols="30" rows="2"
+                                placeholder="Who is this invoice for? (Required)" required></textarea>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                
+                
+                    <div class="table-responsive table-bordered" id="">
+                        <table class="table">
+                            <thead class="bg-dark">
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="">
+                                    <td> <input type="text" name="" id=""
+                                            placeholder="Description of service or product" class="form-control">
+                                    </td>
+                                    <td><input type="text" name="" id="" placeholder="" class="form-control"></td>
+                                    <td> <input type="text" name="" id="" placeholder="" class="form-control"></td>
+                                    <td id="amount"> {{amount}}
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div>
+                        <br>
+                        <button class="btn btn-primary"> + Line item </button>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col">
+                        <!-- <p>Subtotal $0.00</p> -->
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text">Tax</span>
+                                <input type="text" name="" id="" class="form-control" placeholder="0.00">
+                            </div>
+                        </div>
+
+
+                        <br>
+                        <p>Total : {{total}} </p>
+                        <div class="input-group">
+
+                            <div class="input-group-prepend"> <span class="input-group-text">Amount Paid</span>
+                                <input type="text" name="" :id="" class="form-control" placeholder="">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="">
+                        Note
+                    </label>
+                    <textarea type="text" placeholder="Note- any relevant information not yet covered"
+                        class="form-control"></textarea>
+
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="">
+                        Terms
+                    </label>
+                    <textarea type="text"
+                        placeholder="Terms and conditions- late fees, payment methods, delivery schedule"
+                        class="form-control"></textarea>
+                </div>
+
+            
+            </form>
+            </div>
+   
+    
+            <p class="text-center">Currency: USD</p>
+            <p class="text-center">
+                <button type="submit" class="btn btn-big btn-success">Download</button>
+            </p>
+
+   
+
+    <!-- Vue and js -->
+    <script src="./vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="main.js">  </script>
+
+</body>
+</html>
