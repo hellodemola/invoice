@@ -14,8 +14,8 @@
 
 <body>
 
-    <div class="container">
-        <div id="">
+    <div class="container" id="">
+        <div id="pdf">
             <div action="/" method="post" class="form">
                 <div id="">
                     <div class="row" id="">
@@ -191,8 +191,9 @@
 
         <!-- <p class="text-center">Currency: USD</p> -->
         <p class="text-center">
-            <button type="submit" class="btn btn-big btn-success">Download</button>
+            <button id="btn" type="" class="btn btn-big btn-success">Download</button>
         </p>
+
 
 
 
@@ -201,15 +202,38 @@
         <script src="./bootstrap/js/bootstrap.min.js"></script>
         <script src="./vue.js"></script>
         <script src="main.js"> </script>
+        <script src="./print.min.js"></script>
+        <!-- <script src="./html2canvas.js"></script> -->
 
         <!-- datepicker js -->
-        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="http://resources/demos/style.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+        <!-- pdf script -->
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 
         <script>
-            // $('.datepicker').datepicker();
+            // function print() {
+            //     const filename = 'ThisIsYourPDFFilename.pdf';
+
+            //     html2canvas(document.querySelector('#nodeToRenderAsPDF')).then(canvas => {
+            //         let pdf = new jsPDF('p', 'mm', 'a4');
+            //         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+            //         pdf.save(filename);
+            //     });
+            // }
+
+            // Variant
+            // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+          document.getElementById("btn").onclick =  function print(quality = 1) {
+                const filename = 'ThisIsYourPDFFilename.pdf';
+
+                html2canvas(document.querySelector('#pdf'), {
+                    scale: quality
+                }).then(canvas => {
+                    let pdf = new jsPDF('p', 'mm', 'a4');
+                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                    pdf.save(filename);
+                });
+            }
         </script>
 
 </body>
