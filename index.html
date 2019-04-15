@@ -88,7 +88,7 @@
                     <div id="app">
 
                         <div class="grey-bg col-sm-12 col-md-6" id="">
-                            <p class="padding"> Balance: N {{amountPaid - total}} </p>
+                            <p class="padding"> Balance: N {{total - amountPaid}} </p>
                         </div>
 
                         <div class="table-responsive table-bordered" id="">
@@ -203,12 +203,13 @@
         <script src="./vue.js"></script>
         <script src="main.js"> </script>
         <script src="./print.min.js"></script>
-        <!-- <script src="./html2canvas.js"></script> -->
+        <script src="./html2canvas.js"></script>
 
         <!-- datepicker js -->
         <!-- pdf script -->
         <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+        <script src="./currency.js"></script>
 
         <script>
             // function print() {
@@ -223,17 +224,22 @@
 
             // Variant
             // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
-          document.getElementById("btn").onclick =  function print(quality = 1) {
+            document.getElementById("btn").onclick = function print(quality = 1) {
                 const filename = 'ThisIsYourPDFFilename.pdf';
 
                 html2canvas(document.querySelector('#pdf'), {
                     scale: quality
                 }).then(canvas => {
                     let pdf = new jsPDF('p', 'mm', 'a4');
-                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                    pdf.addImage(canvas.toDataURL('img/jpeg'), 'JPEG' ,15, 40, 180, 180);
                     pdf.save(filename);
                 });
             }
+        </script>
+        <script>
+        var currency = $('.currency').val();
+            alert('currency');
+            currency(currency);
         </script>
 
 </body>
