@@ -224,22 +224,20 @@
 
             // Variant
             // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
-            document.getElementById("btn").onclick = function print(quality = 1) {
+            document.getElementById("btn").onclick =  function print() {
                 const filename = 'ThisIsYourPDFFilename.pdf';
 
-                html2canvas(document.querySelector('#pdf'), {
-                    scale: quality
-                }).then(canvas => {
+                html2canvas(document.querySelector('#nodeToRenderAsPDF')).then(canvas => {
                     let pdf = new jsPDF('p', 'mm', 'a4');
-                    pdf.addImage(canvas.toDataURL('img/jpeg'), 'JPEG' ,15, 40, 180, 180);
+                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
                     pdf.save(filename);
                 });
             }
         </script>
         <script>
-        var currency = $('.currency').val();
-            alert('currency');
-            currency(currency);
+        // var currency = $('.currency').val();
+        //     alert('currency');
+        //     currency(currency);
         </script>
 
 </body>
